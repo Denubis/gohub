@@ -69,8 +69,9 @@ func addHandler(repo, branch, shell string) {
 		if err != nil {
 			log.Println(err)
 		}
-		if data.Repository.Name == repo && data.Ref == branch {
+		if data.Repository.Name == repo {
 			executeShell(shell)
+			log.Println(shell)
 		}
 	})
 }
